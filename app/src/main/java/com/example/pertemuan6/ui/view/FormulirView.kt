@@ -40,8 +40,27 @@ fun FormulirView(modifier: Modifier = Modifier,
     var nim by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("") }
     val listdata : MutableList<String> = mutableListOf(nama,gender,alamat,nim)
+    Column(modifier = modifier.fillMaxSize()
+        .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "Biodata", fontWeight = FontWeight.Bold,
+            fontSize = 28.sp
+        )
+        Spacer(modifier = Modifier.padding(20.dp))
+        TextField(
+            value = nama,
+            onValueChange = { nama = it },
+            label = {
+                Text("Nama")
+            },
+            placeholder = {
+                Text("Isi Nama Anda")
+            },
+            modifier = modifier.fillMaxWidth()
+                .padding(5.dp)
 
-
+        )
 
     }
 
