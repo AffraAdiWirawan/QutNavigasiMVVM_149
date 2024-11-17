@@ -61,6 +61,45 @@ fun FormulirView(modifier: Modifier = Modifier,
                 .padding(5.dp)
 
         )
+        Row (
+            modifier = Modifier.fillMaxWidth()) {       //mengganti variabel modifier dengan Modifier
+            pilihanJk.forEach(){ selectedGender ->
+                Row (verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = gender == selectedGender,
+                        onClick = {
+                            gender = selectedGender
+                        })
+                }
+                Text(text = selectedGender) }
+        }
+        TextField(
+            value = nim,
+            onValueChange = { nim = it },
+            label = {
+                Text("NIM")
+            },
+            placeholder = {
+                Text("Isi NIM Anda")
+            },
+            modifier = modifier.fillMaxWidth()
+                .padding(5.dp)
+
+        )
+        TextField(
+            value = alamat,
+            onValueChange = { alamat = it },
+            label = {
+                Text("Alamat")
+            },
+            placeholder = {
+                Text("Isi Alamat Anda")
+            },
+            modifier = modifier.fillMaxWidth()
+                .padding(5.dp)
+
+        )
+
 
     }
 
